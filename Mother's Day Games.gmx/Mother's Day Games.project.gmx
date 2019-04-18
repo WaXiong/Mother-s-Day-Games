@@ -7,6 +7,9 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sp_broom</sprite>
+    <sprite>sprites\sp_trashBag</sprite>
+    <sprite>sprites\sp_furnace</sprite>
+    <sprite>sprites\sp_smoke</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
