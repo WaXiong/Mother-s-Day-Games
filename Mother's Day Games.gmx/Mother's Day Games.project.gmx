@@ -7,15 +7,16 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sp_broom</sprite>
-    <sprite>sprites\sp_trashBag</sprite>
-    <sprite>sprites\sp_furnace</sprite>
-    <sprite>sprites\sp_smoke</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\ob_broom</object>
+    <object>objects\ob_controller</object>
   </objects>
+  <rooms name="rooms">
+    <room>rooms\room0</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
