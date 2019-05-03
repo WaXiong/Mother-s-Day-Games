@@ -7,12 +7,22 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sp_broom</sprite>
+    <sprite>sprites\sp_furnace</sprite>
+    <sprite>sprites\sp_trash</sprite>
+    <sprite>sprites\sp_smoke</sprite>
+    <sprite>sprites\sp_carpet</sprite>
+    <sprite>sprites\sp_rod</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\ob_broom</object>
     <object>objects\ob_controller</object>
+    <object>objects\ob_furnace</object>
+    <object>objects\ob_trash</object>
+    <object>objects\ob_carpet</object>
+    <object>objects\ob_rod</object>
+    <object>objects\ob_smoke</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

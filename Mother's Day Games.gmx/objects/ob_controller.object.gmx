@@ -29,6 +29,7 @@
 global.points = 0;
 start = false;
 
+time = 0;
 room_speed = 30;
 </string>
           </argument>
@@ -53,23 +54,24 @@ room_speed = 30;
           <argument>
             <kind>1</kind>
             <string>// changes the randomness of chore when enter is pressed.
-choreVal = 0
-//irandom_range(0, 2);
+choreVal = irandom_range(0, 2);
 if (choreVal == 0){
 chore = "ob_broom";
 }
 else if (choreVal == 1){
-chore = "";
+chore = "ob_furnace";
 }
 else{
-chore = "";
+chore = "ob_carpet";
 }
 
-// keeps time and tick down
-time -= 1;
-
-if (time &lt; 0){
+// keeps time and tick 
+if (time == 0){
     start = false;
+    instance_destroy(chore);
+}
+else{
+    time--;
 }
 </string>
           </argument>
@@ -94,8 +96,20 @@ if (time &lt; 0){
           <argument>
             <kind>1</kind>
             <string>//create the chore by random
-if (start == true){
-    instance_create(416, 352, chore);
+if !(instance_exists(ob_broom) || instance_exists(ob_furnace) || instance_exists(ob_carpet)){
+    if (start == true){
+        if (chore == "ob_broom"){
+            instance_create(416, 352, ob_broom);
+        }
+        if (chore == "ob_furnace"){
+            instance_create(416 + 64, 352, ob_furnace);
+            instance_create(416, 352, ob_trash);
+        }
+        if (chore == "ob_carpet"){
+            instance_create(416, 352, ob_carpet);
+            instance_create(416, 352 + 32, ob_rod);
+        }
+    }
 }
 </string>
           </argument>
@@ -121,7 +135,7 @@ if (start == true){
             <kind>1</kind>
             <string>if (start == false){
     global.points = 0;
-    time = room_speed * 5000;
+    time = 30 * 90;
 }
 start = true;
 
@@ -150,7 +164,8 @@ start = true;
           <argument>
             <kind>1</kind>
             <string>draw_set_color(c_black)
-draw_text(64, 64, global.points);
+draw_text(64, 64, "Score: " + string(global.points));
+draw_text(64, 640, "Time: " + string((time/30)) + "s");
 </string>
           </argument>
         </arguments>
